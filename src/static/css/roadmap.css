@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+.roadmap-header {
+    padding-top: 50px;
+    background: #101010;
+    border-radius: 15px 15px 0px 0px;
+    text-align: center;
+   
+}
+
+.header-line {
+    margin: 10px auto 0 auto;
+    width: 50%; 
+    max-width: 300px;
+    height: 4px;
+    background-color: aqua;
+    border-radius: 2px;
+}
+
+.roadmap-header h1 {
+    font-weight: 600;
+}
+
+.container-roadmap {
+    border-radius: 0px 0px 15px 15px;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    background-color: #101010;
+}
+
+.timeline {
+    width: 80%;
+    height: auto;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.timeline ul{
+    list-style: none;
+}
+
+.timeline ul li{
+    border: 1px solid #444;
+    padding: 1px;
+    background-color: #1e1f22;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.timeline ul li:last-child{
+    margin-bottom: 0;
+}
+
+.timeline-content h1{
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+
+.timeline-content p{
+    font-size : 16px;
+    line-height: 30px;
+    font-weight: 300;
+}
+
+.java-projects-section {
+    margin-top: 20px;
+    border-radius: 15px;
+    min-height: 100vh;
+    width: 100%;
+    padding: 60px;
+    background-color: #101010;
+}
+
+.java-projects-section h1 {
+    color: #14e4eb;
+    font-weight: 600;
+}
+
+.java-projects-section h2 {
+    margin-top: 20px;
+    font-size: 1.6em;
+    color: white;
+}
+
+.java-projects-section p {
+    margin: 10px 0;
+    font-size: 1em;
+}
+
+.img-java-projects {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 35px auto;
+    border-radius: 5px;
+}
+
+@media only screen and (min-width: 768px) {
+    .timeline::before{
+        content: '';
+        position: absolute;
+        left: 50%;
+        width: 3px;
+        height: 100%;
+        background-color: aqua;
+        transform: translateX(-50%);
+    }
+
+    .timeline ul li {
+        width: 50%;
+        margin-bottom: 20px;
+        position: relative;
+        padding: 20px 20px;
+    }
+
+    .timeline ul li:nth-child(odd) {
+        float: left;
+        clear: right;
+        transform: translateX(-30px);
+        border-radius: 25px 0px 25px 25px;
+    }
+    .timeline ul li:nth-child(even) {
+        float: right;
+        clear: left;
+        transform: translateX(30px);
+        border-radius: 0px 25px 25px 25px;
+    }
+
+    .timeline ul li::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        background-color: aqua;
+        border-radius: 50%;
+    }
+    .timeline ul li:nth-child(odd)::after{
+        transform: translate(50%, -50%);
+        right: -30px;
+    }
+    .timeline ul li:nth-child(even)::after{
+        transform: translate(-50%, -50%);
+        left: -30px;
+    }
+
+    .timeline ul li:hover:after{
+        background-color:#0d8c90;
+    }
+}

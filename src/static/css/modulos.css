@@ -1,0 +1,371 @@
+.module-content {
+    margin: auto;
+    border-radius: 15px;
+    min-height: 100vh;
+    width: 95%;
+    padding: 30px;
+    background-color: #101010;
+}
+
+.section-header {
+    background: linear-gradient(to right,  #00c6ff, #0072ff);
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 0 20px;
+    margin-left: 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+.section-header h1 {
+    font-weight: 600;
+    font-size: 2.5em;
+}
+
+.section-body {
+    padding: 20px;
+    color: white;
+}
+
+.section-body p {
+    margin: 10px 0;
+    font-size: 1em;
+}
+
+.section-body ul {
+    list-style: none;
+    margin: 10px;
+}
+
+.section-body h2 {
+    margin-top: 40px;
+    font-size: 1.6em;
+    color: white;
+}
+
+.code-window {
+    border: 1px solid #444;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    width: 80%;
+    margin: 25px auto;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(32, 32, 32, 0.9);
+}
+
+.window-header {
+    background-color: #2d2d2d;
+    padding: 10px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.red { background-color: #ff5f56; }
+.yellow { background-color: #ffbd2e; }
+.green { background-color: #27c93f; }
+
+.copy-button-container {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.copy-button {
+    background-color: #3a3a3a;
+    color: #dcdcdc;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.copy-button:hover {
+    background-color: #555;
+}
+
+pre {
+    font-family: 'Courier New', Courier, monospace;
+    color: #d4d4d4;
+    font-size: 1.1vw;
+}
+
+.java{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+}
+
+.special-word {
+    color: #569cd6;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+}
+
+.parentesis {
+    color: rgba(255, 255, 0, 0.66);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+}
+
+.comment {
+    color: #6a9955;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+}
+
+.img-section-body {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 35px auto;
+    border-radius: 5px;
+}
+
+.exercise h3 {
+    width: fit-content;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0 ;
+    background-color: #202020;
+}
+
+.exercise p {
+    width: fit-content;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: .9em;
+    padding: 10px;
+    margin: 10px 0 ;
+    background-color: #202020;
+}
+
+.exercise button {
+    margin-bottom: 30px;
+    background: linear-gradient(to right, #8c52ff, #14e4eb);
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.comment-section {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 0 10px;
+    color: white;
+}
+
+.comment-section-body h3 {
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+#comment-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    gap: 0.7rem;
+}
+
+#comment-area {
+  background-color: #111;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 0.9rem;
+  resize: none;
+}
+
+.publish-btn{
+    background: linear-gradient(to right, #8c52ff, #14e4eb);
+    color: white;
+    padding: 5px 17px;
+    border-radius: 5px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.comment-input {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 20px;
+}
+
+.profile-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.profile-side img {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-side .username {
+  margin-top: 5px;
+  font-size: 0.9rem;
+}
+
+.comment-bubble {
+  background-color: #111;
+  font-size: 0.9rem;
+  border-radius: 10px;
+  padding: 15px;
+  flex: 1;
+  color: white;
+}
+
+.comment-separator {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    margin-bottom: 40px;
+    border: 1px solid #ccc;
+}
+
+
+/* Estilo para el contenedor de comentarios */
+
+/*
+/* Encabezados con menos espacio 
+h1 {
+    color: #8c52ff;
+    font-size: 2.2em;
+    margin: 15px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #8c52ff;
+    text-align: center;
+}
+h2 {
+    color: #a67aff;
+    font-size: 1.8em;
+    margin: 12px 0;
+    text-align: center;
+}
+
+h3 {
+    color: #b58cff;
+    font-size: 1.4em;
+    margin: 10px 0;
+}
+
+h4 {
+    color: #c5a3ff;
+    font-size: 1.1em;
+    margin: 8px 0;
+}
+
+/* Párrafos más compactos 
+p {
+    margin: 10px 0;
+    font-size: 1em;
+    text-align: justify;
+}
+
+/* Listas compactas y centradas 
+ul, ol {
+    margin: 10px 0;
+    padding-left: 20px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+li {
+    margin: 5px 0;
+}
+
+/* Imágenes centradas y con borde
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border: 1px solid #333;
+    border-radius: 4px;
+}
+
+/* Bloques de código 
+pre {
+    background-color: #1e1e1e;
+    padding: 12px;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin: 15px 0;
+    border-left: 3px solid #8c52ff;
+}
+
+code {
+    font-family: 'Courier New', monospace;
+    background-color: #1e1e1e;
+    padding: 2px 4px;
+    border-radius: 3px;
+    color: #e0e0e0;
+}
+
+/* Elementos destacados
+.highlight {
+    background-color: #1e1e1e;
+    padding: 12px;
+    border-left: 3px solid #8c52ff;
+    margin: 15px 0;
+    border-radius: 0 4px 4px 0;
+}
+
+/* Tablas compactas 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+th, td {
+    padding: 8px;
+    border: 1px solid #333;
+    text-align: left;
+}
+
+th {
+    background-color: #8c52ff;
+    color: #121212;
+}
+
+tr:nth-child(even) {
+    background-color: #1e1e1e;
+}
+
+/* Enlaces
+a {
+    color: #a67aff;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #8c52ff;
+    text-decoration: underline;
+}
+
+/* Responsive para móviles 
+
+*/

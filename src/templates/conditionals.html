@@ -1,0 +1,309 @@
+{% extends 'layout.html' %}
+  
+{% block title %}Condicionales{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/modulos.css">
+    <title>Condicionales</title>
+</head>
+<body>
+    <div class="module-content" >
+        <section class="documentation">
+            <div class="section-header">
+                <h1>Condicionales</h1>
+            </div>
+            <div class="section-body">
+                <p>
+                    ¡Bienvenido nuevamente. En esta seccion aprenderas a tomar decisiones dentro de tus programas
+                    usando estructuras llamadas condicionales! Estas son esenciales para que tu codigo reaccione de 
+                    una forma especifica a diferentes situaciones, tu mismo decides como respondera el programa de 
+                    acuerdo a un caso determinado. Sin embargo, antes de saber como hacer esto, es importante conocer
+                    que es un booleano o bool.
+                
+                </p>
+                <h2>¿Qué es un Booleano?</h2>
+                <p>
+                    Un booleano es un tipo de dato que solo puede tener dos valores posibles, 
+                    estos valores son llamados valores de verdad, y estos son: true(verdadero) y false(falso). 
+                    En la programacion, los booleanos son usados para tomar decisiones, ya que permiten evaluar 
+                    condiciones y determinar el flujo de un programa. Por ejemplo, si tienes una variable llamada 
+                    "esMayorDeEdad" que es de tipo booleano, puedes usarla para decidir si una persona puede entrar 
+                    a un bar o no. Si "esMayorDeEdad" es true, entonces la persona puede entrar; si es false, 
+                    no puede entrar. Es como un interruptor de luz que puede estar encendido o apagado. Los usamos 
+                    para comprobar si algo es cierto o no.
+                    <ul>
+                        <li><strong>Ejemplo:</strong></li>
+                        <li>¿El cielo es azul?: true</li>
+                        <li>¿La tierra es plana?: false</li>
+                        <li>¿El agua es liquida?: true</li>
+                        <li>¿Los gatos son reptiles?: false</li>
+                    </ul>  
+                </p>
+
+                <h2> ¿Qué son los condicionales y para qué sirven?</h2>
+                <p>
+                    Los condicionales son instrucciones que permiten que el programa tome decisiones. Sirven 
+                    para ejecutar una parte del codigo solo si se cumple una condicion.
+                     <ul>
+                        <li><strong>Ejemplos cotidianos:</strong></li>
+                        <li>Si el semaforo esta en verde, entonces cruzo la calle</li>
+                        <li>Si hay dinero en mi cuenta, entonces puedo comprar cosas</li>
+                        <li>Si termine mi tarea, entonces juego videojuegos; si no, sigo estudiando</li>
+                    </ul>   
+                </p>
+
+                <h2>Sentencia if</h2>
+                <p> La sentencia if es una estructura que ejecuta un bloque de codigo solo si la condicion dentro
+                    del parentensis es verdadera (true). La sentencia if, sirve para ejecutar un bloque de codigo
+                    solo si se cumple una condicion especifica, si no se cumple, el programa simplemente ignora 
+                    ese bloque.
+                </p>
+
+                <div class="code-window">
+                    <div class="window-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <pre><code class="java">
+    <span class="special-word">if</span> <span class="parentesis">(</span>condición<span class="parentesis">)</span> <span class="parentesis">{</span>
+        <span class="comment">// Código a ejecutar si la condición es verdadera</span>
+    <span class="parentesis">}</span>
+                    </code></pre>
+                </div>
+                
+                <h2>Sentencia else</h2>
+                <p> La sentencia else es una palabra clave que se usa para darle a enteneder a la maquina que en caso de que no se halla cumplido la sentencia if, entonces se ejecute lo que haya dentro de la sentencia else. En otras palabras se ejecuta si la ocndicion if es falsa</p>
+                <p> Para definir que hacer cuando no se cumpla la condicion inicial</p>
+
+                <div class="code-window">
+                    <div class="window-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <pre><code class="java">
+    <span class="special-word">if</span> <span class="parentesis">(</span>llueve<span class="parentesis">)</span> <span class="parentesis">{</span>
+        System.out.println<span class="parentesis">(</span><span class="comment">"Llevo paraguas"</span><span class="parentesis">)</span>;
+    <span class="parentesis">}</span> <span class="special-word">else</span> <span class="parentesis">{</span>
+        System.out.println <span class="parentesis">(</span><span class="comment">"Salgo sin paraguas"</span><span class="parentesis">)</span>;
+    <span class="parentesis">}</span>
+                    </code></pre>
+                </div>
+
+                <h2>¿Cómo se hace una condicion if-else?</h2>
+                <p> Se combinan if y else para tener un camino claro: si algo sucede, haces una cosa; si nom haces la otra.</p>
+
+                <div class="code-window">
+                    <div class="window-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <pre><code class="java">
+    <span class="special-word">int</span> edad = 16;
+
+    <span class="special-word">if</span> <span class="parentesis">(</span>edad >= 18<span class="parentesis">)</span> <span class="parentesis">{</span>
+        System.out.println<span class="parentesis">(</span><span class="comment">"Puedes votar."</span><span class="parentesis">)</span>;
+    <span class="parentesis">}</span> <span class="special-word">else</span> <span class="parentesis">{</span>
+        System.out.println <span class="parentesis">(</span><span class="comment">"Aún no puedes votar." </span><span class="parentesis">)</span>;
+    <span class="parentesis">}</span>
+                    </code></pre>
+                </div>
+
+                <h2>Condicionales anidados</h2>
+                <p> Un condicional anidado es un caso en el cual un if se encuentra dentro de otro if, esto permite evaluar varios condicionales paso a paso, como se muestra en la siguiente imagen.</p>
+
+                <div class="code-window">
+                    <div class="window-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <pre><code class="java">
+    <span class="special-word">int</span> temperatura = 35;
+
+    <span class="special-word">if</span> <span class="parentesis">(</span>temperatura > 30<span class="parentesis">)</span> <span class="parentesis">{</span>
+        <span class="special-word">if</span> <span class="parentesis">(</span>temperatura > 40<span class="parentesis">)</span> <span class="parentesis">{</span>
+            System.out.println<span class="parentesis">(</span><span class="comment">"Hace muchisimo calor"</span><span class="parentesis">)</span>;
+        <span class="parentesis">}</span> <span class="special-word">else</span> <span class="parentesis">{</span>
+            System.out.println <span class="parentesis">(</span><span class="comment">"Hace calor" </span><span class="parentesis">)</span>;
+        <span class="parentesis">}</span>
+    <span class="parentesis">}</span> <span class="special-word">else</span> <span class="parentesis">{</span>
+        System.out.println <span class="parentesis">(</span><span class="comment">"La temperatura está bien" </span><span class="parentesis">)</span>;
+    <span class="parentesis">}</span>
+                    </code></pre>
+                </div>
+
+                <p> o tambien puedes usar else if para multiples condiciones</p>
+
+                <div class="code-window">
+                    <div class="window-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <pre><code class="java">
+    <span class="special-word">int</span> nota = 85;
+
+    <span class="special-word">if</span> <span class="parentesis">(</span>nota >= 90<span class="parentesis">)</span> <span class="parentesis">{</span>
+        System.out.println<span class="parentesis">(</span><span class="comment">"Excelente!"</span><span class="parentesis">)</span>;
+    <span class="parentesis">}</span> <span class="special-word">else if</span> <span class="parentesis">(</span>nota >= 70<span class="parentesis">)</span> <span class="parentesis">{</span>
+        System.out.println<span class="parentesis">(</span><span class="comment">"Aprobado!"</span><span class="parentesis">)</span>;
+    <span class="parentesis">}</span> <span class="special-word">else</span> <span class="parentesis">{</span>
+        System.out.println<span class="parentesis">(</span><span class="comment">"Reprobado :("</span><span class="parentesis">)</span>;
+    <span class="parentesis">}</span>
+                    </code></pre>
+                </div>
+
+                <h2>Sentencia switch</h2>
+
+                <p> La sentencia switch evalua una variable contra varios posibles valores y ejecuta el bloque correspondiente. Es útil cuando tienes muchas condiciones sobre una misma variable.</p>
+
+                <div class="code-window">
+                    <div class="window-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <pre><code class="java">
+    <span class="special-word">switch</span> <span class="parentesis">(</span>variable<span class="parentesis">)</span> <span class="parentesis">{</span>
+        <span class="special-word">case</span> valor1:
+            <span class="comment">// código</span>
+            <span class="special-word">break</span>;
+        <span class="special-word">case</span> valor2:
+            <span class="comment">// código</span>
+            <span class="special-word">break</span>;
+        <span class="special-word">default</span>:
+            <span class="comment">// código si no hay coincidencia</span>
+            <span class="special-word">break</span>;
+    <span class="parentesis">}</span>
+                    </code></pre>
+                </div>
+
+                <h2>Ejemplo</h2>
+
+                <div class="code-window">
+                    <div class="window-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <pre><code class="java">
+    <span class="special-word">int</span> dia = 4;
+
+    <span class="special-word">switch</span> <span class="parentesis">(</span>dia<span class="parentesis">)</span> <span class="parentesis">{</span>
+        <span class="special-word">case</span> 1:
+            System.out.println<span class="parentesis">(</span><span class="comment">"Lunes"</span><span class="parentesis">)</span>;
+            <span class="special-word">break</span>;
+        <span class="special-word">case</span> 2:
+            System.out.println<span class="parentesis">(</span><span class="comment">"Martes"</span><span class="parentesis">)</span>;
+            <span class="special-word">break</span>;
+        <span class="special-word">case</span> 3:
+            System.out.println<span class="parentesis">(</span><span class="comment">"Miércoles"</span><span class="parentesis">)</span>;
+            <span class="special-word">break</span>;
+        <span class="special-word">case</span> 4:
+            System.out.println<span class="parentesis">(</span><span class="comment">"Jueves"</span><span class="parentesis">)</span>;
+            <span class="special-word">break</span>;
+        <span class="special-word">case</span> 5:
+            System.out.println<span class="parentesis">(</span><span class="comment">"Viernes"</span><span class="parentesis">)</span>;
+            <span class="special-word">break</span>;
+        <span class="special-word">default</span>:
+            System.out.println<span class="parentesis">(</span><span class="comment">"Otro día"</span><span class="parentesis">)</span>;
+            <span class="special-word">break</span>;
+    <span class="parentesis">}</span>
+                    </code></pre>
+                </div>
+
+                <h2>Conclusiones</h2>
+
+                <p>Los condicionales son el alma de las decisiones en un programa. Gracias a ellos puedes hacer que tu aplicacion se adapte a diferentes situaciones, igual que tu lo haces en la vida real. Ahora que conoces if, else, else if y switch, ¡tienes las herramientas basicas para controlar el flujo de tu codigo!</p>
+            </div>
+        </section>
+                <section class="exercises">
+            <div class="section-header" style="background: linear-gradient(to right, #00c6ff, #a200ff); padding: 1rem; color: white; margin-top: 30px;">
+                <h2>Ejercicios: Datos Simples</h2>
+                <p>En esta sección encontrarás ejercicios prácticos para que domines los datos simples y complejos en Java.</p>
+            </div>
+            <div class="section-body" style="padding: 1rem;">
+                <h2>Nivel Fácil</h2>
+                <!-- Ejercicio 1 -->
+                <div class="exercise">
+                    <h3>Ejercicio: 1</h3>
+                    <p>Descripción del ejercicio</p>
+                    <a style="text-decoration: none; color: white;" href="https://campusvirtual.univalle.edu.co/moodle/course/view.php?id=95577" target="_blank"> <button>Intentar</button></a>
+                </div>
+                <!-- Ejercicio 2 -->
+                <div class="exercise">
+                    <h3>Ejercicio: 2</h3>
+                    <p>Descripción del ejercicio</p>
+                    <a style="text-decoration: none; color: white;" href="https://campusvirtual.univalle.edu.co/moodle/course/view.php?id=95577" target="_blank"> <button>Intentar</button></a>
+                </div>
+
+                <h2>Nivel Intermedio</h2>
+                <!-- Ejercicio 3 -->
+                <div class="exercise">
+                    <h3>Ejercicio: 1</h3>
+                    <p>Descripción del ejercicio</p>
+                    <a style="text-decoration: none; color: white;" href="https://campusvirtual.univalle.edu.co/moodle/course/view.php?id=95577" target="_blank"> <button>Intentar</button></a>
+                </div>
+                <!-- Ejercicio 4 -->
+                <div class="exercise">
+                    <h3>Ejercicio: 2</h3>
+                    <p>Descripción del ejercicio</p>
+                    <a style="text-decoration: none; color: white;" href="https://campusvirtual.univalle.edu.co/moodle/course/view.php?id=95577" target="_blank"> <button>Intentar</button></a>
+                </div>
+
+                <h2>Nivel Avanzado</h2>
+                <!-- Ejercicio 5 -->
+                <div class="exercise">
+                    <h3>Ejercicio: 1</h3>
+                    <p>Descripción del ejercicio</p>
+                    <a style="text-decoration: none; color: white;" href="https://campusvirtual.univalle.edu.co/moodle/course/view.php?id=95577" target="_blank"> <button>Intentar</button></a>
+                </div>
+                <!-- Ejercicio 6 -->
+                <div class="exercise">
+                    <h3>Ejercicio: 2</h3>
+                    <p>Descripción del ejercicio</p>
+                    <a style="text-decoration: none; color: white;" href="https://campusvirtual.univalle.edu.co/moodle/course/view.php?id=95577" target="_blank"> <button>Intentar</button></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="comment-section">
+            <div class="comment-section-body" style="padding: 1rem;">
+                <h3>¡Deja tu pregunta o responde la pregunta de los demás!</h3>
+                <form id="comment-form">
+                <textarea id="comment-area" rows="4" placeholder="Escribe aquí..."></textarea>
+                <button class="publish-btn" type="submit">Publicar</button>
+                </form>
+                <hr class="comment-separator">
+
+                <div id="comment-list">
+                <article class="comment-input">
+                    <div class="profile-side">
+                    <img src="./img/eulaSimilingProfilePic.png" alt="Perfil" width="70" height="70">
+                    <span class="username">Eulalia2005</span>
+                    </div>
+                    <div class="comment-bubble">
+                    <p>
+                        Cómo cojones voy a hacer una caja de comentarios así, esto va a estar difícil 
+                        chavales, porque no sé cómo manejar los comentarios si serán visibles en todas las páginas o solo en la que se 
+                        comenta. El caso, ahí miramos chavales, no me puede quedar grande. Otra cosa, el diseño este que me acabo de marcar tampoco 
+                        es tan sencillo de poner en CSS xd pero bueno lol omg en plan holy shit.
+                    </p>
+                    </div>
+                </article>
+                </div>
+            </div>
+        </section>
+    </div>     
+</body>
+</html>
+{% endblock %}

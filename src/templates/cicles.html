@@ -1,0 +1,274 @@
+{% extends 'layout.html' %}
+  
+{% block title %}Ciclos{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/modulos.css">
+    <title>Java Facilito - Ciclos</title>
+</head>
+<body>
+    <div class="module-content">
+        <section class="documentation">
+            <div class="section-header">
+                <h1>Ciclos</h1>
+            </div>
+            <div class="section-body">
+                <p>
+                    Dentro de los fundamentos de programacion, una de las herrmaientas mas importantes y
+                    que nos acompañaran por mucho tiempo, son los ciclos.
+                    Los ciclos son estructuras que nos permiten repetir un mismo fragmento de codigo varias veces
+                    de manera automatica, podemos establacer la cantidad de veces que se ejecuta con una condicion
+                    o una variable.
+                <br>
+                    Imagina que en un programa requerimos llevar a cabo una operación sencilla como sumar, pero
+                    tenemos que hacerla varias veces.
+                    Para ello utilizaremos <span class="special-word">for</span> y <span class="special-word">while</span>.
+                </p>
+                <h2> Ciclos For</h2>
+                <p>
+                    Este bucle <span class="special-word">for</span> es uno de los elementos que más se utiliza en programación. 
+                    Con este tipo de ciclo puedes establecer el número de iteraciones que necesitas que 
+                    tu bucle repita hasta que quieras que se acabe (debes conocer previamente el número de
+                    iteraciones).
+                    <br><strong>Tiene 4 parámetros:</strong>
+                    <ul>
+                        <li><strong>Variable de inicio:</strong> donde se comienza a ejecutar el ciclo (el nombre estándar de esta variable es i)</li>
+                        <li><strong>Condición o límite del ciclo:</strong> solo se repite si la condición es verdadera</li>
+                        <li><strong>Modificador:</strong> modificará la variable cuando se requiera</li>
+                        <li><strong>Cuerpo:</strong> donde se añaden las instrucciones a repetir</li>
+                </ul>
+                </p>
+                <div class="code-window">
+                    <div class="window-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <pre><code class="java">
+    <span class="special-word">for</span> <span class="parentesis">(</span>int i = 0; i < n; i++<span class="parentesis">)</span> <span class="parentesis">{</span>
+        <span class="comment">// Instrucciones para ejecutar en el bucle</span>
+    <span class="parentesis">}</span>
+                    </code></pre>
+                </div>
+            
+                <p>
+                    En los bucles <span class="special-word">for</span> se instancia una variable, que es conocida como iterador (i) o variable de inicio.
+                    Esta variable i es importante ya que define la cantidad de veces que se ejecuta el ciclo.
+                    Para el caso de este ejemplo se tomo <span style="color:#00f7ff">int i = 0</span>, estableciendo el valor inicial de i en 0.
+                    Ya que es una variable de iteración, cuando se realiza el bucle correctamente y se va a repetir, este iterador cambia
+                    segun le especifiquemos, en este caso: i++ se encarga de aumentar 1 al valor de i despues de cada ciclo.
+                    Existen otras formas de modificar la variable i en cada ciclo:
+                </p>
+                <!-- Inserte imagen que muestre tabla con las formas de modificar el iterador-->
+                
+                <h2>Detener un ciclo For</h2>
+                <p>
+                Para que un bucle <span class="special-word">for</span> deje de ejecutarse se tiene un argumento en el cuerpo conocido como 
+                condicion de parada.
+                Esta condicion es un booleano que permite que el codigo se repita siempre y cuando dicha 
+                condicion sea verdadera (<span style="color:#00d9ff">True</span>)
+                </p>
+                <p>
+                Para este ejemplo, la condicion de parada es <span style="color:#00f7ff">i < n</span>, una 
+                operación de comparación, donde el valor de n determinaria la cantidad de veces que veces que
+                se repite el codigo en el ciclo. Cada vez que el ciclo se ejecuta, se evalua esta condición,
+                ya que el valor de i cambia con cada iteración.
+                <br><strong>El códdigo que se ejecuta dentro del bucle tiene ciertas características:</strong>
+                </p>
+                <ul>
+                    <li></li>
+                    <li>- Las variables declaradas dentro, no se ven afectadas por el bucle a diferencia de las que se declararon fuera.</li>
+                    <li>- Se pueden usar <code>if</code> para controlar condiciones específicas dentro del bucle.</li>
+                    <li>- Es posible usar <code>break</code> para salir anticipadamente del bucle si se cumple una condición.</li>
+                    <li>- Se puede usar <code>continue</code> para saltar una iteración sin salir del bucle.</li>
+                    <li>- Puede contener llamadas a funciones o métodos, que se ejecutarán en cada iteración.</li>
+                </ul>
+                    <p> 
+                    Asi se veria las iteraciones en el codigo, con los valores de i y i < n, para un valor de n igual a 3: 
+                    </p>
+
+                    <p>
+                    A continuación se puede ver el siguiente codigo con sus respectivos llamados:
+                    </p>
+
+                    <h2>Ciclos While</h2>
+
+                <p>
+                    Dentro de la programación, el ciclo <span class="special-word">while</span> es una herramienta esencial que nos permite repetir una serie de instrucciones <strong>mientras una condición sea verdadera</strong>.
+                    Este tipo de bucle es especialmente útil cuando <span style="color:#00d9ff">no se conoce con anticipación cuántas veces</span> se ejecutará el ciclo.
+                </p>
+
+                <p>
+                    El ciclo <span class="special-word">while</span> evalúa una condición booleana antes de ejecutar el cuerpo del ciclo. 
+                    Si la condición es <span style="color:#00d9ff">true</span>, se ejecuta el código dentro del bucle; si es <span style="color:red">false</span>, se detiene la ejecución.
+                </p>
+
+                <p>
+                    A diferencia del bucle <span class="special-word">for</span>, el <span class="special-word">while</span> no tiene una estructura predefinida para el inicio, condición y modificación de la variable. 
+                    Todo esto debe controlarse manualmente dentro del bucle.
+                </p>
+
+                <p>
+                    Este tipo de bucle es útil cuando, por ejemplo, estamos esperando una entrada del usuario o una condición que no sabemos cuándo se cumplirá.
+                </p>
+
+                <h3>Sintaxis básica:</h3>
+
+                <div class="code-window">
+                    <div class="window-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <pre><code class="java">
+    <span class="special-word">while</span> <span class="parentesis">(</span>condición<span class="parentesis">)</span> <span class="parentesis">{</span>
+        <span class="comment">// Instrucciones a ejecutar mientras la condición sea true</span>
+        <span class="comment">// Debes asegurarte que la condición cambie en algún momento</span>
+    <span class="parentesis">}</span>
+                    </code></pre>
+                </div>
+                
+                <p>
+                    En los bucles <span class="special-word">while</span> es importante controlar la condición dentro del cuerpo, es muy normal que estos bucles se ejecuten
+                    una cantidad infinita de veces trayendo problemas al programa. Para ello podemos determinar una serie de pasos.
+                </p>
+                
+                <ul>
+                    <li><strong>1.</strong> Definir una variable fuera del bucle <span class="special-word">while</span>.</li>
+                    <li><strong>2.</strong> Establecer una condición en el bucle usando la variable anteriormente definida.</li>
+                    <li><strong>3.</strong> Modificar de alguna forma la variable dentro del bucle <span class="special-word">while</span>, con la posibilidad de dejar de cumplir la condición anterior y asi salir del bucle.</li>
+                </ul>
+
+                <p>
+                    Tambien puedes utilizar una condición siempre verdadera y utilizar <span class="special-word">break</span> dentro del codigo para dejar de ejecutarlo.
+                </p>
+
+                <p>
+                    Algunas características del cuerpo del bucle <span class="special-word">while</span> incluyen:
+                </p>
+
+                <ul>
+                    <li>- El uso de variables de control externas, que deben ser actualizadas manualmente para evitar ciclos infinitos.</li>
+                    <li>- Se puede incluir una instrucción <span class="special-word">if</span> para verificar condiciones dentro del bucle.</li>
+                    <li>- Se puede utilizar <span class="special-word">break</span> para salir del bucle antes de que la condición sea falsa.</li>
+                    <li>- El uso de <span class="special-word">continue</span> permite saltar la ejecución del resto del cuerpo en una iteración y continuar con la siguiente.</li>
+                    <li>- Se puede usar en combinación con estructuras de datos, lectura de archivos o entrada del usuario.</li>
+                </ul>
+
+                <p>
+                    Un ejemplo práctico sería contar desde un número inicial hasta un valor final, controlando la condición manualmente:
+                </p>
+                
+                <div class="code-window">
+                    <div class="window-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <pre><code class="java">
+    <span class="special-word">int</span> i = 0;  <span class="comment">// variable de inicio (bandera)</span>
+
+    <span class="special-word">while</span> <span class="parentesis">(</span>i < 5<span class="parentesis">)</span> <span class="parentesis">{</span>
+        System.out.println<span class="parentesis">(</span>i</span><span class="parentesis">)</span>;
+        i++; <span class="comment">// modificador para evitar bucle infinito</span>
+    <span class="parentesis">}</span>
+                    </code></pre>
+                </div>
+
+                <p>
+                    En este ejemplo, la variable <code>i</code> se incrementa en cada iteración y el ciclo se detiene cuando <code>i</code> ya no cumple la condición <code>i &lt; 5</code>.
+                </p>
+
+            </div>
+        </section>
+                <section class="exercises">
+            <div class="section-header" style="background: linear-gradient(to right, #00c6ff, #a200ff); padding: 1rem; color: white; margin-top: 30px;">
+                <h2>Ejercicios: Datos Simples</h2>
+                <p>En esta sección encontrarás ejercicios prácticos para que domines los datos simples y complejos en Java.</p>
+            </div>
+            <div class="section-body" style="padding: 1rem;">
+                <h2>Nivel Fácil</h2>
+                <!-- Ejercicio 1 -->
+                <div class="exercise">
+                    <h3>Ejercicio: 1</h3>
+                    <p>Descripción del ejercicio</p>
+                    <a style="text-decoration: none; color: white;" href="https://campusvirtual.univalle.edu.co/moodle/course/view.php?id=95577" target="_blank"> <button>Intentar</button></a>
+                </div>
+                <!-- Ejercicio 2 -->
+                <div class="exercise">
+                    <h3>Ejercicio: 2</h3>
+                    <p>Descripción del ejercicio</p>
+                    <a style="text-decoration: none; color: white;" href="https://campusvirtual.univalle.edu.co/moodle/course/view.php?id=95577" target="_blank"> <button>Intentar</button></a>
+                </div>
+
+                <h2>Nivel Intermedio</h2>
+                <!-- Ejercicio 3 -->
+                <div class="exercise">
+                    <h3>Ejercicio: 1</h3>
+                    <p>Descripción del ejercicio</p>
+                    <a style="text-decoration: none; color: white;" href="https://campusvirtual.univalle.edu.co/moodle/course/view.php?id=95577" target="_blank"> <button>Intentar</button></a>
+                </div>
+                <!-- Ejercicio 4 -->
+                <div class="exercise">
+                    <h3>Ejercicio: 2</h3>
+                    <p>Descripción del ejercicio</p>
+                    <a style="text-decoration: none; color: white;" href="https://campusvirtual.univalle.edu.co/moodle/course/view.php?id=95577" target="_blank"> <button>Intentar</button></a>
+                </div>
+
+                <h2>Nivel Avanzado</h2>
+                <!-- Ejercicio 5 -->
+                <div class="exercise">
+                    <h3>Ejercicio: 1</h3>
+                    <p>Descripción del ejercicio</p>
+                    <a style="text-decoration: none; color: white;" href="https://campusvirtual.univalle.edu.co/moodle/course/view.php?id=95577" target="_blank"> <button>Intentar</button></a>
+                </div>
+                <!-- Ejercicio 6 -->
+                <div class="exercise">
+                    <h3>Ejercicio: 2</h3>
+                    <p>Descripción del ejercicio</p>
+                    <a style="text-decoration: none; color: white;" href="https://campusvirtual.univalle.edu.co/moodle/course/view.php?id=95577" target="_blank"> <button>Intentar</button></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="comment-section">
+            <div class="comment-section-body" style="padding: 1rem;">
+                <h3>¡Deja tu pregunta o responde la pregunta de los demás!</h3>
+                <form id="comment-form">
+                <textarea id="comment-area" rows="4" placeholder="Escribe aquí..."></textarea>
+                <button class="publish-btn" type="submit">Publicar</button>
+                </form>
+                <hr class="comment-separator">
+
+                <div id="comment-list">
+                <article class="comment-input">
+                    <div class="profile-side">
+                    <img src="../static/img/eulaSimilingProfilePic.png" alt="Perfil" width="70" height="70">
+                    <span class="username">Eulalia2005</span>
+                    </div>
+                    <div class="comment-bubble">
+                    <p>
+                        Cómo cojones voy a hacer una caja de comentarios así, esto va a estar difícil 
+                        chavales, porque no sé cómo manejar los comentarios si serán visibles en todas las páginas o solo en la que se 
+                        comenta. El caso, ahí miramos chavales, no me puede quedar grande. Otra cosa, el diseño este que me acabo de marcar tampoco 
+                        es tan sencillo de poner en CSS xd pero bueno lol omg en plan holy shit.
+                    </p>
+                    </div>
+                </article>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <script src="js/index_script.js"></script>
+</body>
+</html>
+
+
+{% endblock %}

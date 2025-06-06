@@ -1,0 +1,145 @@
+{% extends 'layout.html' %}
+  
+{% block title %}Ciclos{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/modulos.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="module-content" style="overflow-y: auto;">
+        <section class="documentation">
+            <div class="section-header" style="background: linear-gradient(to right, #00c6ff, #0072ff); padding: 1rem; color: white;">
+                <h2>Funciones</h2>
+            </div>
+            <div class="section-body" style="padding: 1rem;">
+                <p>
+                    En Java, una función (también llamada método) es un bloque de código reutilizable que realiza una tarea específica. Su sintaxis básica es:
+                </p>    
+
+                <div class="code-window">
+                    <div class="window-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <pre><code class="java">
+    <span class="special-word">public static tipoDeRetorno</span> nombreFuncion<span class="parentesis">(</span><span class="special-word">parámetros</span><span class="parentesis">)</span><span class="parentesis">{</span>
+        <span class="comment">// Cuerpo de la función</span>
+        <span class="special-word">return</span> valor;
+    <span class="parentesis">}</span>
+                    </code></pre>
+                </div>
+
+                <h2> Explicación </h2> 
+                <ul>
+                    <li><strong>- tipoDeRetorno:</strong> El tipo de dato que devuelve la función (como int, String, etc.). Si no devuelve nada, se usa void.</li>
+                    <li><strong>- nombreFuncion:</strong> El nombre que identifica a la función.</li>
+                    <li><strong>- parámetros:</strong> Opcionales, son variables que la función puede recibir para trabajar con ellas.</li>
+                </ul>
+                <h2>Ejemplo básico:</h2>
+
+                <div class="code-window">
+                    <div class="window-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <pre><code class="java">
+    <span class="special-word">public static int</span> sumar<span class="parentesis">(</span><span class="special-word">int</span> a, <span class="special-word">int</span> b<span class="parentesis">)</span><span class="parentesis">{</span>
+        <span class="comment">// Cuerpo de la función</span>
+        <span class="special-word">return</span> a + b;
+    <span class="parentesis">}</span>
+                    </code></pre>
+                </div>
+            </div>
+        </section>
+        <section class="exercises">
+            <div class="section-header" style="background: linear-gradient(to right, #00c6ff, #a200ff); padding: 1rem; color: white; margin-top: 30px;">
+                <h2>Ejercicios: Funciones</h2>
+                <p>En esta sección encontrarás ejercicios prácticos para que domines las funciones en Java.</p>
+            </div>
+            <div class="section-body" style="padding: 1rem;">
+                <h2>Nivel Fácil</h2>
+                <!-- Ejercicio 1 -->
+                <div class="exercise">
+                    <h3>Ejercicio: Suma de dos números</h3>
+                    <p>Crea una función que reciba dos números enteros y devuelva su suma.</p>
+                    <a style="text-decoration: none; color: white;" href="https://campusvirtual.univalle.edu.co/moodle/course/view.php?id=95577" target="_blank"> <button>Intentar</button></a>
+                </div>
+                <!-- Ejercicio 2 -->
+                <div class="exercise">
+                    <h3>Ejercicio: Número par o impar</h3>
+                    <p>Crea una función que reciba un número entero y devuelva true si es par o false si es impar.</p>
+                    <a style="text-decoration: none; color: white;" href="https://campusvirtual.univalle.edu.co/moodle/course/view.php?id=95577" target="_blank"> <button>Intentar</button></a>
+                </div>
+
+                <h2>Nivel Intermedio</h2>
+                <!-- Ejercicio 3 -->
+                <div class="exercise">
+                    <h3>Ejercicio: Contar vocales</h3>
+                    <p>Crea una función que reciba una cadena de texto y cuente cuántas vocales contiene.</p>
+                    <a style="text-decoration: none; color: white;" href="https://campusvirtual.univalle.edu.co/moodle/course/view.php?id=95577" target="_blank"> <button>Intentar</button></a>
+                </div>
+                <!-- Ejercicio 4 -->
+                <div class="exercise">
+                    <h3>Ejercicio: Número primo</h3>
+                    <p>Crea una función que determine si un número entero es primo.</p>
+                    <a style="text-decoration: none; color: white;" href="https://campusvirtual.univalle.edu.co/moodle/course/view.php?id=95577" target="_blank"> <button>Intentar</button></a>
+                </div>
+
+                <h2>Nivel Avanzado</h2>
+                <!-- Ejercicio 5 -->
+                <div class="exercise">
+                    <h3>Ejercicio: Invertir una cadena sin usar funciones de librería</h3>
+                    <p>Escribe una función que reciba una cadena y devuelva la misma cadena invertida sin usar funciones como reverse().</p>
+                    <a style="text-decoration: none; color: white;" href="https://campusvirtual.univalle.edu.co/moodle/course/view.php?id=95577" target="_blank"> <button>Intentar</button></a>
+                </div>
+                <!-- Ejercicio 6 -->
+                <div class="exercise">
+                    <h3>Ejercicio: Fibonacci Recursivo</h3>
+                    <p>Crea una función recursiva que devuelva el n-ésimo número de Fibonacci.</p>
+                    <a style="text-decoration: none; color: white;" href="https://campusvirtual.univalle.edu.co/moodle/course/view.php?id=95577" target="_blank"> <button>Intentar</button></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="comment-section">
+            <div class="comment-section-body" style="padding: 1rem;">
+                <h3>¡Deja tu pregunta o responde la pregunta de los demás!</h3>
+                <form id="comment-form">
+                <textarea id="comment-area" rows="4" placeholder="Escribe aquí..."></textarea>
+                <button class="publish-btn" type="submit">Publicar</button>
+                </form>
+                <hr class="comment-separator">
+
+                <div id="comment-list">
+                <article class="comment-input">
+                    <div class="profile-side">
+                    <img src="./img/eulaSimilingProfilePic.png" alt="Perfil" width="70" height="70">
+                    <span class="username">Eulalia2005</span>
+                    </div>
+                    <div class="comment-bubble">
+                    <p>
+                        Cómo cojones voy a hacer una caja de comentarios así, esto va a estar difícil 
+                        chavales, porque no sé cómo manejar los comentarios si serán visibles en todas las páginas o solo en la que se 
+                        comenta. El caso, ahí miramos chavales, no me puede quedar grande. Otra cosa, el diseño este que me acabo de marcar tampoco 
+                        es tan sencillo de poner en CSS xd pero bueno lol omg en plan holy shit.
+                    </p>
+                    </div>
+                </article>
+                </div>
+            </div>
+        </section>
+    </div>
+<!--<script src="./js/functions_doc.js"></script>-->
+</body>
+</html>
+
+{% endblock %}

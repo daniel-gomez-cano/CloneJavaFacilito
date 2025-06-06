@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+  
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <header class="banner">
+                <h1>Aprende Java <span class="glow">Facilito</span></h1>
+                <p>
+                    ¡Empieza hoy mismo a aprender los fundamentos básicos de Java<br>
+                    y comienza a desarrollar tu lógica como programador!
+                </p>
+            </header>
+            <section class="quote-section">
+                <div class="quote-text">
+                    <p class="quote">"No se trata de cuántos lenguajes sepas sino de <span class="glowtext">cómo solucionas los problemas</span>"</p>
+                    <p class="description">En Java Facilito, queremos que aprendas a usar esta poderosa herramienta de una forma rápida y divertida para que así plasmar todas tus ideas. <br>
+                        ¡Todos tus sueños al alcance de un click!</p>
+                        <a href="{{ url_for('data') }}" data-page="simple_data_doc.html"><button>
+                            ¡Empieza Ahora!
+                        </button></a>
+                </div>
+                <div class="quote-image">
+                    <img src="../static/img/sies.png" alt="Imagen descriptiva" width="300" height="300">
+                </div>
+            </section>
+</body>
+</html>
+{% endblock %}

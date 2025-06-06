@@ -1,0 +1,344 @@
+{% extends 'layout.html' %}
+  
+{% block title %}Simple Data{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/modulos.css">
+    <title>Datos_simples</title>
+</head>
+<body>
+    <div class="module-content" >
+        <section class="documentation">
+            <div class="section-header">
+                <h1>Tipos de Datos Simples y Compuestos</h1>
+            </div>
+            <div class="section-body">
+                <p>
+                    Bienvenido a esta primera seccion del curso <strong>JavaFacilito</strong>! Este sera el inicio  de este hermoso camino 
+                    para convertirte en un gran java developer. Aqui conoceras los conceptos fundamentales, los cuales formaran bases solidas que te 
+                    ayudaran a manipular los datos de los programas que desarrolles en un futuro.<br>
+                    Esperamos que te diviertas, ¡bienvenido!
+                </p>
+                <h2>¿Qué es un dato?</h2>
+                <p>
+                    Antes de comenzar, es muy importante conococer que son los datos en la programación, en pocas palabras estos datos son informacion, 
+                    esta informacion la puedes guardar en algo llamado "variables", estas variables te serviran para poder guardar y manejar dicha informacion. 
+                    Entonces para poder entender de manera sencilla que es una variable lo explicaremos de la siguiente manera.<br><br>
+                    Imagina que tienes una caja con una etiqueta, esta etiqueta describe lo que hay en dicha caja, y dentro de cada caja puedes meter algo, en el
+                    caso de la programacion, ese "algo", son cosas como: numeros, palabras, valores de verdadero o falso, entre otras.
+                    Eso que has metido y que hay dentro de la caja, es el dato, y el nombre de la caja o la etiqueta es la variable. Recuerda, en programacion 
+                    un dato es cualquier informacion que pueda ser procesada por una computadora.
+                    
+                    <strong>Ejemplo:</strong>
+                    <div class="code-window">
+                        <div class="window-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                            <span class="copy-button-container">
+                                <button class="copy-button" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i>  Copy</button>
+                            </span>
+                        </div>
+                        <pre><code class="java">
+    edad = 17
+    nombre = <span class="comment">"Chinatsu Kano"</span>
+    mayor_edad = <span class="special-word">false</span>
+    lista_mercado = <span class="parentesis">[</span><span class="comment">"pan"</span>,<span class="comment">"leche"</span>,<span class="comment">"arroz"</span><span class="parentesis">]</span>
+                        </code></pre>
+                    </div>
+                
+                    Dentro de la programacion existen tipos de datos. Estos tipos indican que clase de información se esta mandejando. Asi el programa sabra como tratar el dato.
+                </p>
+
+                <h2>Datos Simples</h2>
+                <p>
+                    Los datos simples son los tipos de datos mas basicos. En un contexto mas cotidiano son el equivalente a las piesas mas pequeñas de un LEGO, piesas las
+                    cuales se usan para construir cosas mas grandes.
+                    <ul>
+                        <li><strong>Características:</strong></li>
+                        <li>- Solo almacenana un valor</li>
+                        <li>- Son rápidos y ocupan poca memoria</li>
+                        <li>- No tienen funcionalidades adicionales (métodos)</li>
+                        <li>- Son usados para hacer operaciones sipmles como sumar, comparar, contar, etc.</li>
+                    </ul>
+                    Ahora que ya sabes que son los datos simples, podremos mencionar los que hay en Java
+                </p>
+
+                <h2>Datos Simples en Java</h2>
+                <p>
+                    Comencemos por los numeros, los datos que puedes usar para manejar nuemeros son los siguietenes: 
+                    <ul>
+                        <li><span class="special-word">byte</span></li>
+                        <ul>
+                            <li><b>Tamaño:</b> 8 bits</li>
+                            <li><b>Rango:</b> -128 a 127</li>
+                            <li><b>Uso:</b> Ideal para ahorrar memoria cuando sabes que vas a trabajar con valores pequeños</li>
+                        </ul>
+                        <li><span class="special-word">short</span></li>
+                        <ul>
+                            <li><b>Tamaño:</b> 16 bits</li>
+                            <li><b>Rango:</b> -32.768 a 32.767</li>
+                            <li><b>Uso:</b> Ideal para ahorrar calculos de bajo consumo, donde no se necesita mucha precision</li>
+                        </ul>
+                        <li><span class="special-word">int</span></li>
+                        <ul>
+                            <li><b>Tamaño:</b> Tamaño: 32 bits</li>
+                            <li><b>Rango:</b> -2.147.483.648 a 2.147.483.647</li>
+                            <li><b>Uso:</b> Ideal para valores numericos relativamente grandes, operaciones basicos, o numeros por defecto como IDs</li>
+                        </ul>
+                        <li><span class="special-word">long</span></li>
+                        <ul>
+                            <li><b>Tamaño:</b> Tamaño: 64 bits</li>
+                            <li><b>Rango:</b> -9.223.372.036.854.775.808 a 9.223.372.036.854.775.807/li>
+                            <li><b>Uso:</b> Ideal para numeros enormes</li>
+                        </ul>
+                        <li><span class="special-word">float</span></li>
+                        <ul>
+                            <li><b>Tamaño:</b> 32 bits</li>
+                            <li><b>Rango:</b> 6-7 digitos decimales</li>
+                            <li><b>Uso:</b> Decimales rápidos con menor precisión</li>
+                        </ul>
+                        <li><span class="special-word">double</span></li>
+                        <ul>
+                            <li><b>Tamaño:</b> 64 bits</li>
+                            <li><b>Rango:</b> 15 digitos decimales</li>
+                            <li><b>Uso:</b> Decimales de alta precision como calculos financieros, cientificos o estadistica</li>
+                        </ul>
+                    </ul>
+                    Ademas de los numeros, tambien existen tipos para representar valores booleanos (valores de verdadero o falso)
+                        <ul>
+                            <li><span class="special-word">char</span></li>
+                            <ul>
+                                <li><b>Tamaño:</b> 16 bits</li>
+                                <li><b>¿Que es?:</b> simplemente un caracter, un simbolo</li>
+                                <li><b>Uso:</b> Para manejar letras individuales, como iniciales o simbolos</li>
+                            </ul>
+                            <li><span class="special-word">boolean</span></li>
+                            <ul>
+                                <li><b>Tamaño:</b> 1 bit</li>
+                                <li><b>¿Que es?:</b> La representacion de un valor logico (true o false)</li>
+                                <li><b>Uso:</b> Para tomar decisiones, condiciones, verificaciones, etc.</li>
+                            </ul>
+                        </ul>
+                    Acontinuacion podras ver una tabla con todos los valores de cada tipo de numero:
+                </p>
+
+                <img class="img-section-body" src="../static/img/tipos-de-datos-en-java.png" alt="tipos_de_datos">
+                
+                <h2>Implementacion en Java</h2>
+
+                <div class="code-window">
+                    <div class="window-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <pre><code class="java">
+    <span class="special-word">public class</span> Main<span class="parentesis">{</span>
+        <span class="special-word">public static void</span> main<span class="parentesis">(</span><span class="special-word">String</span><span class="parentesis">[</span><span class="parentesis">]</span><span class="parentesis">[</span><span class="parentesis">]</span>args<span class="parentesis">)</span><span class="parentesis">{</span>; 
+            
+            <span class="comment">// Números enteros</span>
+            <span class="special-word">byte</span> miByte = 127;                    <span class="comment">// 8 bits</span>
+            <span class="special-word">short</span> miShort = 32767;                <span class="comment">// 16 bits</span>
+            <span class="special-word">int</span> miInt = 2147483647;               <span class="comment">// 32 bits</span>
+            <span class="special-word">long</span> miLong = 9223372036854775807L;   <span class="comment">// 64 bits (L al final)</span>
+            
+            <span class="comment">// Números decimales</span>
+            <span class="special-word">float</span> miFloat = 3.14f;               <span class="comment">// 32 bits (f al final)</span>
+            <span class="special-word">double</span> miDouble = 3.141592653589793; <span class="comment">// 64 bits</span>
+
+            <span class="comment">// Caracteres</span>
+            <span class="special-word">char</span> miChar = 'A';                  <span class="comment">// 16 bits (comillas simples)</span>
+
+            <span class="comment">// Booleanos</span>
+            <span class="special-word">boolean</span> miBoolean = <span class="special-word">true</span>;           <span class="comment">// 1 bit (true o false)</span>
+
+            <span class="comment">// Imprimir los valores</span>
+            System.out.println<span class="parentesis">(</span><span class="comment">"Byte: "</span> + miByte<span class="parentesis">)</span>;
+            System.out.println<span class="parentesis">(</span><span class="comment">"Short: "</span> + miShort<span class="parentesis">)</span>;
+            System.out.println<span class="parentesis">(</span><span class="comment">"Int: "</span> + miInt<span class="parentesis">)</span>;
+            System.out.println<span class="parentesis">(</span><span class="comment">"Long: "</span> + miLong<span class="parentesis">)</span>;
+            System.out.println<span class="parentesis">(</span><span class="comment">"Float: "</span> + miFloat<span class="parentesis">)</span>;
+            System.out.println<span class="parentesis">(</span><span class="comment">"Double: "</span> + miDouble<span class="parentesis">)</span>;
+            System.out.println<span class="parentesis">(</span><span class="comment">"Char: "</span> + miChar<span class="parentesis">)</span>;
+            System.out.println<span class="parentesis">(</span><span class="comment">"Boolean: "</span> + miBoolean<span class="parentesis">)</span>;
+        <span class="parentesis">}</span>
+    <span class="parentesis">}</span>
+                    </code></pre>
+                </div>
+
+                <h2>Datos compuestos</h2>
+                <p>
+                    Los datos compuestos, son estructuras que agrupan varios valores, pueden incluir tipos primitivos 
+                    y objetos. No estan definidos como "Primitivas" en Java, pero se les llama "compuestas" porque contienen 
+                    varios Datos. En palabras del ejemplo anterior, los datos compuestos son como las cajas mas grandes, 
+                    las cuales pueden guardar varios datos simples juntos, son como el LEGO grande hecho para varias piezas.
+                    <ul>
+                        <li><strong>Características:</strong></li>
+                        <li>- Agrupan multiples valores (a veces de distintos tipos)</li>
+                        <li>- Son objetos (tienen metodos y propiedades)</li>
+                        <li>- No tienen funcionalidades adicionales (métodos)</li>
+                    </ul>
+                </p>
+
+                <h2>Datos compuestos en Java</h2>
+                <ul>
+                    <li><b>String:</b></li>
+                    <ul>
+                        <li><b>¿Que es?:</b> Una secuencia de caracteres</li>
+                        <li><b>Sirve:</b> Para guardar nombres, mensajes, frases, textos largos o pequeños</li>
+                        <li><b>Algunos metodos:</b> .length(), .toUpperCase(), .substring()</li>
+                    </ul>
+                    <li><b>Array (arreglo):</b></li>
+                    <ul>
+                        <li><b>¿Que es?:</b> Una coleccion ordenada de valores del mismo tipo, con tamaño fijo.</li>
+                        <li><b>Sirve:</b> Para guardar listas de elementos, como notas, edades, nombres</li>
+                        <li>Su tamaño no cambia una vez creado</li>
+                        <li>Tiene indice (posicion)</li>
+                    </ul>
+                    <li><b>ArrayList(lista dinamica):</b></li>
+                    <ul>
+                        <li><b>¿Que es?:</b> Una lista similar al array, pero mas flexible ya que puedes agregar o quitar elementos.</li>
+                        <li><b>Sirve:</b> Cuando no sabes cuantos elementos vas a tener</li>
+                        <li><b>Metodos utiles:</b> .add(), .remove(), .get(), .size()</li>
+                    </ul>
+                    <li><b>HashMap:</b></li>
+                    <ul>
+                        <li><b>¿Que es?:</b> Estructura que guarda pares clave-valor</li>
+                        <li><b>Sirve:</b> guardar cosas con etiquetas como telefono de contactos o configuraciones.</li>
+                        <li><b>Puedes acceder por clave:</b> edades.get(nombre) -> contenido  </li>
+                    </ul>
+                </ul>
+
+                <p>Acontinuacion verás la implementacion en sintaxis de Java:</p>
+
+                <div class="code-window">
+                    <div class="window-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <pre><code class="java">
+    <span class="special-word">public class</span> Main<span class="parentesis">{</span>
+        <span class="special-word">public static void</span> main<span class="parentesis">(</span><span class="special-word">String</span><span class="parentesis">[</span><span class="parentesis">]</span><span class="parentesis">[</span><span class="parentesis">]</span>args<span class="parentesis">)</span><span class="parentesis">{</span>; 
+            
+            <span class="comment">// String (secuencia de caracteres)</span>
+            <span class="special-word">String</span> miNombre = <span class="comment">"Chinatsu Kano"</span>;
+            System.out.println<span class="parentesis">(</span><span class="comment">"Nombre: "</span> + miNombre<span class="parentesis">)</span>;
+            
+            <span class="comment">// Array (arreglo tamaño fijo)</span>
+            <span class="special-word">int</span>[] edades = <span class="parentesis">{</span>17, 18, 19<span class="parentesis">}</span>;
+            System.out.println<span class="parentesis">(</span><span class="comment">"Edades: "</span> + edades<span class="parentesis">)</span>;
+
+            <span class="comment">// ArrayList (lista dinamica)</span>
+            <span class="special-word">ArrayList<</span>String<span class="special-word">></span> listaNombres = <span class="special-word">new</span> ArrayList<><span class="parentesis">()</span>;
+            listaNombres.add<span class="parentesis">(</span><span class="comment">"Chinatsu"</span><span class="parentesis">)</span>;
+            listaNombres.add<span class="parentesis">(</span><span class="comment">"Kano"</span><span class="parentesis">)</span>;
+            listaNombres.add<span class="parentesis">(</span><span class="comment">"Hina"</span><span class="parentesis">)</span>;
+            listaNombres.remove<span class="parentesis">(</span><span class="comment">"Taiki"</span><span class="parentesis">)</span>;
+            System.out.println<span class="parentesis">(</span><span class="comment">"Lista de nombres: "</span> + listaNombres<span class="parentesis">)</span>;
+            System.out.println<span class="parentesis">(</span><span class="comment">"Tamaño de la lista: "</span> + listaNombres.size<span class="parentesis">()</span><span class="parentesis">)</span>;
+            System.out.println<span class="parentesis">(</span><span class="comment">"Primer nombre: "</span> + listaNombres.get<span class="parentesis">(</span>0<span class="parentesis">)</span><span class="parentesis">)</span>;
+            
+            <span class="comment">// HashMap (pares clave-valor)</span>
+            <span class="special-word">HashMap<</span><span class="special-word">String</span>, <span class="special-word">Integer</span><span class="special-word">></span> edades = <span class="special-word">new</span> HashMap<><span class="parentesis">()</span>;
+            edades.put<span class="parentesis">(</span><span class="comment">"Chinatsu"</span>, 17<span class="parentesis">)</span>;
+            edades.put<span class="parentesis">(</span><span class="comment">"Kano"</span>, 18<span class="parentesis">)</span>;
+            edades.put<span class="parentesis">(</span><span class="comment">"Hina"</span>, 19<span class="parentesis">)</span>;
+            System.out.println<span class="parentesis">(</span><span class="comment">"Edad de Chinatsu: "</span> + edades.get<span class="parentesis">(</span><span class="comment">"Chinatsu"</span><span class="parentesis">)</span><span class="parentesis">)</span>;
+            System.out.println<span class="parentesis">(</span><span class="comment">"Edad de Kano: "</span> + edades.get<span class="parentesis">(</span><span class="comment">"Kano"</span><span class="parentesis">)</span><span class="parentesis">)</span>;
+            System.out.println<span class="parentesis">(</span><span class="comment">"Edad de Hina: "</span> + edades.get<span class="parentesis">(</span><span class="comment">"Hina"</span><span class="parentesis">)</span><span class="parentesis">)</span>;
+        <span class="parentesis">}</span>
+    <span class="parentesis">}</span>
+                    </code></pre>
+                </div>
+
+            </div>
+        </section>
+        <section class="exercises">
+            <div class="section-header" style="background: linear-gradient(to right, #00c6ff, #a200ff); padding: 1rem; color: white; margin-top: 30px;">
+                <h2>Ejercicios: Datos Simples</h2>
+                <p>En esta sección encontrarás ejercicios prácticos para que domines los datos simples y complejos en Java.</p>
+            </div>
+            <div class="section-body" style="padding: 1rem;">
+                <h2>Nivel Fácil</h2>
+                <!-- Ejercicio 1 -->
+                <div class="exercise">
+                    <h3>Ejercicio: 1</h3>
+                    <p>Descripción del ejercicio</p>
+                    <a style="text-decoration: none; color: white;" href="https://campusvirtual.univalle.edu.co/moodle/course/view.php?id=95577" target="_blank"> <button>Intentar</button></a>
+                </div>
+                <!-- Ejercicio 2 -->
+                <div class="exercise">
+                    <h3>Ejercicio: 2</h3>
+                    <p>Descripción del ejercicio</p>
+                    <a style="text-decoration: none; color: white;" href="https://campusvirtual.univalle.edu.co/moodle/course/view.php?id=95577" target="_blank"> <button>Intentar</button></a>
+                </div>
+
+                <h2>Nivel Intermedio</h2>
+                <!-- Ejercicio 3 -->
+                <div class="exercise">
+                    <h3>Ejercicio: 1</h3>
+                    <p>Descripción del ejercicio</p>
+                    <a style="text-decoration: none; color: white;" href="https://campusvirtual.univalle.edu.co/moodle/course/view.php?id=95577" target="_blank"> <button>Intentar</button></a>
+                </div>
+                <!-- Ejercicio 4 -->
+                <div class="exercise">
+                    <h3>Ejercicio: 2</h3>
+                    <p>Descripción del ejercicio</p>
+                    <a style="text-decoration: none; color: white;" href="https://campusvirtual.univalle.edu.co/moodle/course/view.php?id=95577" target="_blank"> <button>Intentar</button></a>
+                </div>
+
+                <h2>Nivel Avanzado</h2>
+                <!-- Ejercicio 5 -->
+                <div class="exercise">
+                    <h3>Ejercicio: 1</h3>
+                    <p>Descripción del ejercicio</p>
+                    <a style="text-decoration: none; color: white;" href="https://campusvirtual.univalle.edu.co/moodle/course/view.php?id=95577" target="_blank"> <button>Intentar</button></a>
+                </div>
+                <!-- Ejercicio 6 -->
+                <div class="exercise">
+                    <h3>Ejercicio: 2</h3>
+                    <p>Descripción del ejercicio</p>
+                    <a style="text-decoration: none; color: white;" href="https://campusvirtual.univalle.edu.co/moodle/course/view.php?id=95577" target="_blank"> <button>Intentar</button></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="comment-section">
+            <div class="comment-section-body" style="padding: 1rem;">
+                <h3>¡Deja tu pregunta o responde la pregunta de los demás!</h3>
+                <form id="comment-form">
+                <textarea id="comment-area" rows="4" placeholder="Escribe aquí..."></textarea>
+                <button class="publish-btn" type="submit">Publicar</button>
+                </form>
+                <hr class="comment-separator">
+
+                <div id="comment-list">
+                <article class="comment-input">
+                    <div class="profile-side">
+                    <img src="./img/eulaSimilingProfilePic.png" alt="Perfil" width="70" height="70">
+                    <span class="username">Eulalia2005</span>
+                    </div>
+                    <div class="comment-bubble">
+                    <p>
+                        Cómo cojones voy a hacer una caja de comentarios así, esto va a estar difícil 
+                        chavales, porque no sé cómo manejar los comentarios si serán visibles en todas las páginas o solo en la que se 
+                        comenta. El caso, ahí miramos chavales, no me puede quedar grande. Otra cosa, el diseño este que me acabo de marcar tampoco 
+                        es tan sencillo de poner en CSS xd pero bueno lol omg en plan holy shit.
+                    </p>
+                    </div>
+                </article>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+{% endblock %}

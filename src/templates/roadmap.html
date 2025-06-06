@@ -1,0 +1,126 @@
+{% extends 'layout.html' %}
+  
+{% block title %}Roadmap{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/roadmap.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>Basic RoadMap</title>
+</head>
+<body>
+    <div class="roadmap-header">
+        <h1>BASIC JAVA DEVELOPER ROADMAP</h1>
+        <div class="header-line"></div> <!-- Esto es una línea, no tocar -->
+    </div>
+    <div class="container-roadmap">
+        <div class="timeline">
+            <ul>
+                <li>
+                    <div class="timeline-content">
+                        <h1>Learn the Basics</h1>
+                        <p>Sintaxis básica, Primitivas, Condicionales, Ciclos, Arreglos, Funciones, Variables y Alcance.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-content">
+                        <h1>Object Oriented</h1>
+                        <p>Clases, Objetos, Atributos, Métodos, Especificadores de acceso, Paquetes, Herencia, Abstracción, Encapsulamiento, Enumerate.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-content">
+                        <h1>Data Structures</h1>
+                        <p>Array vs. ArrayList, Set, Map, Queue, Dequeue, Stack, Iterator, Generic collections, Graphs, Trees, Hash-Based Data Structures.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-content">
+                        <h1>Concurrency - Functional</h1>
+                        <p>Java memory model, Virtual threads, Threads, High order functions, Functional interfaces and composition, Stream API.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-content">
+                        <h1>Build Tools</h1>
+                        <p>Maven, Gradle, Bazel, Simple Build Tool (SBT), Jenkins.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-content">
+                        <h1>Web Frameworks</h1>
+                        <p>Spring (Spring Boot), Quarkus, Javalin, Hibernate, JavaServer Faces, Grails.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-content">
+                        <h1>Testing</h1>
+                        <p>JUnit, TestNG, REST Assured, JMeter, Cucubmber JVM</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="java-projects-section">
+        <h1>Begginer Java Projects</h1>
+
+        <h2>1. Basic Calculator</h2>
+        <p>
+            In this project, you'll create a basic calculator that can perform simple arithmetic operations like addition, 
+            subtraction, multiplication, and division. This project will help you familiarize yourself with variables, conditional 
+            statements, and user input. <br>
+
+            <br>Some common variations of this project can include adding more operations or implementing a GUI (graphical user interface). <br>
+
+            <br>Here’s how the GUI of a calculator can look like:
+        </p>
+        <img class="img-java-projects" src="../static/img/calculator-example.png" alt="GUI Calculadora" width="300" height="300">
+
+        <h2>2. To-Do List Application</h2>
+        <p>
+            IA to-do list is a practical project that can be used in your daily life. In this project, you'll create an 
+            application where users can add tasks to do and mark them as completed when done.<br>
+
+            <br>This project will introduce you to concepts like arrays, loops, and data structures such as lists.  
+            Some potential features you can include in your to-do list app are: <br>
+
+            <br>- Adding deadlines or due dates for each task.
+            <br>- Categorizing tasks into different sections (e.g., work, personal, school).
+            <br>- Setting reminders for upcoming tasks.
+        </p>
+
+        <br>
+        <br>
+        <h1>Intermediate Java Projects</h1>
+
+        <h2>1. Library Managing System</h2>
+        <p>
+            In this project, you'll develop a system for managing books in a library. This project will help you work with
+            complex data structures and practice object-oriented programming concepts like inheritance, encapsulation, and polymorphism. <br>
+
+            <br>Here's an example interface of a library system created by Haris on GitHub:
+        </p>
+        <img class="img-java-projects" src="../static/img/to-do-list.png" alt="Book Managing GUI" width="400" height="400">
+
+        <h2>2. Build an Inventory Management System</h2>
+        <p>
+            This project involves creating a system for managing inventory in a store or warehouse. You'll need to work with databases
+            and design data models to keep track of products, quantities, and prices. You'll also learn about CRUD operations (create, 
+            read, update, delete) when interacting with the database using SQL. <br>
+
+            <br>Some features you can include in your inventory management system are: <br>
+            <br>- Adding new products to the inventory. 
+            <br>- Updating product quantities and prices.
+            <br>- Generating reports on sales and stock levels.
+        </p>
+    </div>
+</body>
+</html>
+
+{% endblock %}

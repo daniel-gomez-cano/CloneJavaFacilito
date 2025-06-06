@@ -8,10 +8,10 @@ from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask(__name__)
 app.secret_key = 'cairocoders-ednalan'
  
-DB_HOST = "localhost"
+DB_HOST = "dpg-d11hun8gjchc7381sprg-a"
 DB_NAME = "javafacilito_db"
-DB_USER = "postgres"
-DB_PASS = "daniel"
+DB_USER = "admin"
+DB_PASS = "gVgbaGYJb6C0Z9GPjnw39Xf26PkfhTXK"
  
 conn = psycopg2.connect(dbname=DB_NAME, user=DB_USER, password=DB_PASS, host=DB_HOST)
  

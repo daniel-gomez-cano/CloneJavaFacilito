@@ -43,17 +43,6 @@ def functions():
 def roadmap():
     return render_template('roadmap.html')
 
-
-# @app.route('/')
-# def home():
-#     # Check if user is loggedin
-#     if 'loggedin' in session:
-    
-#         # User is loggedin show them the home page
-#         return render_template('home.html', username=session['username'])
-#     # User is not loggedin redirect to login page
-#     return redirect(url_for('login'))
- 
 @app.route('/login/', methods=['GET', 'POST'])
 def login():
     cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
@@ -63,11 +52,16 @@ def login():
         username = request.form['username']
         password = request.form['password']
         print(password)
- 
-        # Check if account exists using MySQL
-        cursor.execute('SELECT * FROM users WHERE username = %s', (username,))
-        # Fetch one record and return result
-        account = cursor.fetchone()
+        try:
+            # Check if account exists using MySQL
+            cursor.execute('SELECT * FROM users WHERE username = %s', (username,))
+            # Fetch one record and return result
+            account = cursor.fetchone()
+        except Exception as e:
+            conn.rollback()
+            flash('Error while checking credentials. Please try again.')
+            print(f"Login error: {e}")
+            return render_template('login.html')
  
         if account:
             password_rs = account['password']
@@ -102,12 +96,19 @@ def register():
         email = request.form['email']
     
         _hashed_password = generate_password_hash(password)
- 
-        #Check if account exists using MySQL
-        cursor.execute('SELECT * FROM users WHERE username = %s', (username,))
-        account = cursor.fetchone()
-        print(account)
-        # If account exists show error and validation checks
+    
+        try:
+            #Check if account exists using MySQL
+            cursor.execute('SELECT * FROM users WHERE username = %s', (username,))
+            account = cursor.fetchone()
+            print(account)
+            # If account exists show error and validation checks
+        except Exception as e:
+            conn.rollback()
+            flash('Error while checking credentials. Please try again.')
+            print(f"Login error: {e}")
+            return render_template('login.html')
+        
         if account:
             flash('Account already exists!')
         elif not re.match(r'[^@]+@[^@]+\.[^@]+', email):
@@ -117,10 +118,15 @@ def register():
         elif not username or not password or not email:
             flash('Please fill out the form!')
         else:
-            # Account doesnt exists and the form data is valid, now insert new account into users table
-            cursor.execute("INSERT INTO users (fullname, username, password, email) VALUES (%s,%s,%s,%s)", (fullname, username, _hashed_password, email))
-            conn.commit()
-            flash('You have successfully registered!')
+            try:
+                # Account doesnt exists and the form data is valid, now insert new account into users table
+                cursor.execute("INSERT INTO users (fullname, username, password, email) VALUES (%s,%s,%s,%s)", (fullname, username, _hashed_password, email))
+                conn.commit()
+                flash('You have successfully registered!')
+            except Exception as e:
+                conn.rollback()
+                flash('Error during registration.')
+                print(f"Register INSERT error: {e}")
     elif request.method == 'POST':
         # Form is empty... (no POST data)
         flash('Please fill out the form!')
@@ -143,10 +149,16 @@ def profile():
    
     # Check if user is loggedin
     if 'loggedin' in session:
-        cursor.execute('SELECT * FROM users WHERE id = %s', [session['id']])
-        account = cursor.fetchone()
-        # Show the profile page with account info
-        return render_template('profile.html', account=account)
+        try:
+            cursor.execute('SELECT * FROM users WHERE id = %s', [session['id']])
+            account = cursor.fetchone()
+            # Show the profile page with account info
+            return render_template('profile.html', account=account)
+        except Exception as e:
+            conn.rollback()
+            flash("Couldn't load profile.")
+            print(f"Profile error: {e}")
+            return redirect(url_for('login'))
     # User is not loggedin redirect to login page
     return redirect(url_for('login'))
  

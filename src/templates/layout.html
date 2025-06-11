@@ -17,6 +17,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body>
+    <!-- Boton responsive-->
+     <button id="menu-toggle" class="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+
     <div class="container-hpta">
         <aside class="sidebar">
             <div class="logo">
@@ -36,9 +42,14 @@
                 <a href="{{ url_for('profile') }}"><i class="fa-regular fa-circle-user"></i></a>
             </div>
         </aside>
+
+         <!-- Overlay para cerrar menú en pantallas pequeñas -->
+        <div class="overlay" id="overlay"></div>
+
         <div class="content">
           {% block content %}{% endblock %}
         </div>
     </div>
  </body>
+ <script src="../static/js/display_btn.js"></script>
 </html>

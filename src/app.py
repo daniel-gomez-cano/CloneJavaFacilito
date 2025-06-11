@@ -8,7 +8,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask(__name__)
 app.secret_key = 'cairocoders-ednalan'
  
-DB_HOST = "dpg-d11hun8gjchc7381sprg-a"
+DB_HOST = "dpg-d11hun8gjchc7381sprg-a.oregon-postgres.render.com"
 DB_NAME = "javafacilito_db"
 DB_USER = "admin"
 DB_PASS = "gVgbaGYJb6C0Z9GPjnw39Xf26PkfhTXK"

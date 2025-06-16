@@ -2,10 +2,12 @@
 from flask import Flask, request, session, redirect, url_for, render_template, flash
 import psycopg2 #pip install psycopg2 
 import psycopg2.extras
-import re 
+import re
+import os
+from werkzeug.utils import secure_filename
 from werkzeug.security import generate_password_hash, check_password_hash
  
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', template_folder='templates')
 app.secret_key = 'cairocoders-ednalan'
  
 DB_HOST = "dpg-d11hun8gjchc7381sprg-a.oregon-postgres.render.com"
@@ -143,24 +145,58 @@ def logout():
    # Redirect to login page
    return redirect(url_for('login'))
   
-@app.route('/profile')
+@app.route('/profile', methods=['GET', 'POST'])
 def profile(): 
     cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
-   
-    # Check if user is loggedin
-    if 'loggedin' in session:
-        try:
-            cursor.execute('SELECT * FROM users WHERE id = %s', [session['id']])
-            account = cursor.fetchone()
-            # Show the profile page with account info
-            return render_template('profile.html', account=account)
-        except Exception as e:
-            conn.rollback()
-            flash("Couldn't load profile.")
-            print(f"Profile error: {e}")
-            return redirect(url_for('login'))
-    # User is not loggedin redirect to login page
-    return redirect(url_for('login'))
+
+    if 'loggedin' not in session:
+        return redirect(url_for('login'))
+
+    try:
+        # Manejar subida de imagen si es POST
+        if request.method == 'POST':
+            if 'profile_pic' not in request.files:
+                flash('No file part')
+                return redirect(request.url)
+
+            file = request.files['profile_pic']
+            if file.filename == '':
+                flash('No selected file')
+                return redirect(request.url)
+
+            if file and allowed_file(file.filename):
+                filename = secure_filename(file.filename)
+                file_path = f"{app.config['UPLOAD_FOLDER']}/{filename}"
+                file.save(file_path)
+
+                # Actualizar en la base de datos
+                cursor.execute("UPDATE users SET profile_image = %s WHERE id = %s", (filename, session['id']))
+                conn.commit()
+                flash('Profile picture updated!')
+
+        # Obtener info del usuario y mostrar
+        cursor.execute('SELECT * FROM users WHERE id = %s', [session['id']])
+        account = cursor.fetchone()
+        return render_template('profile.html', account=account)
+
+    except Exception as e:
+        conn.rollback()
+        flash("Error: " + str(e))  # Muestra el error real en pantalla (para desarrollo)
+        print(f"[Profile error]: {e}")  # También lo imprime en consola
+        return redirect(url_for('login'))  # Mejor redirigir a profile para debug
+
+# FUNCIÓN PARA SUBIR ARCHIVOS
+UPLOAD_FOLDER = 'static/profile_pics'
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+# ✅ Crear carpeta si no existe (para evitar el error)
+if not os.path.exists(UPLOAD_FOLDER):
+    os.makedirs(UPLOAD_FOLDER)
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
  
 if __name__ == "__main__":
     app.run(debug=True)

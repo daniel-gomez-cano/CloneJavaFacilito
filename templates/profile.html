@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+  
+{% block title %}Perfil{% endblock %}
+  
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+    <title>Perfil</title>
+    <style>
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #ddd;
+        }
+
+        .hidden-file-input {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+            <div class="profile-image-container">
+                <!-- Mostrar imagen de perfil del usuario -->
+                {% if account.profile_image %}
+                    <img src="{{ url_for('static', filename='profile_pics/' + account.profile_image) }}" alt="Profile Picture" class="profile-picture">
+                {% else %}
+                    <img src="{{ url_for('static', filename='profile_pics/default.jpg') }}" alt="Profile Picture" class="profile-picture">
+                {% endif %}
+
+                <!-- Formulario para subir nueva imagen -->
+                <form method="POST" enctype="multipart/form-data">
+                    <input type="file" name="profile_pic" id="profile_pic" class="hidden-file-input" onchange="this.form.submit()">
+                    <button type="button" class="change-image-button" onclick="document.getElementById('profile_pic').click();">
+                        Cambiar Imagen
+                    </button>
+                </form>
+            </div>
+            <div class="profile-info">  
+                <h2>{{ account['username'] }}</h2>
+                <p>{{ account['email'] }}</p>
+                <a href="#" class="profile-link">Cambiar contraseña</a>
+                <a href="#" class="profile-link">Cambiar correo</a>
+                <a href="{{ url_for('logout') }}" class="profile-link">Cerrar sesión</a>
+            </div>
+        </div>
+        <div class="motivational-message">
+            <p>Java es poderoso y versátil, y tú también lo eres. Mantén la motivación alta, diviértete explorando, y sobre todo... ¡sigue adelante! 🚀</p>
+        </div>
+        <div class="support-contact">
+            <h3>Contacto con Soporte</h3>
+            <p><span class="material-icons">phone</span> +57 316 3197861</p>
+            <p><span class="material-icons">mail</span> daniel.gomez.cano@correounivalle.edu.co</p>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

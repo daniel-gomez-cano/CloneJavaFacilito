@@ -9,6 +9,20 @@ from werkzeug.security import generate_password_hash, check_password_hash
  
 app = Flask(__name__, static_folder='static', template_folder='templates')
 app.secret_key = 'cairocoders-ednalan'
+
+# FUNCIÓN PARA SUBIR ARCHIVOS
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+UPLOAD_FOLDER = os.path.join(BASE_DIR, 'static', 'profile_pics')
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+# ✅ Crear carpeta si no existe (para evitar el error)
+if not os.path.exists(UPLOAD_FOLDER):
+    os.makedirs(UPLOAD_FOLDER)
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
  
 DB_HOST = "dpg-d11hun8gjchc7381sprg-a.oregon-postgres.render.com"
 DB_NAME = "javafacilito_db"
@@ -184,19 +198,6 @@ def profile():
         flash("Error: " + str(e))  # Muestra el error real en pantalla (para desarrollo)
         print(f"[Profile error]: {e}")  # También lo imprime en consola
         return redirect(url_for('login'))  # Mejor redirigir a profile para debug
-
-# FUNCIÓN PARA SUBIR ARCHIVOS
-UPLOAD_FOLDER = 'static/profile_pics'
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-
-# ✅ Crear carpeta si no existe (para evitar el error)
-if not os.path.exists(UPLOAD_FOLDER):
-    os.makedirs(UPLOAD_FOLDER)
-
-def allowed_file(filename):
-    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
  
 if __name__ == "__main__":
     app.run(debug=True)

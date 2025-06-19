@@ -113,7 +113,7 @@ html {
     background: linear-gradient(to right, #8c52ff, #14e4eb);
     text-align: center;
     padding: 40px 20px;
-    border-radius: 10px;
+    border-radius: 15px;
     color: white;
 }
 
@@ -122,6 +122,21 @@ html {
     font-weight: 600;
     font-size: 4em;
 }
+.banner h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+    font-size: 1.4em;
+}
+
+@media (max-width: 800px) {
+    .banner h1 {
+        font-weight: 550;
+        font-size: 3em;
+    }
+}
+
+
+
 
 
 .glow {
@@ -147,6 +162,16 @@ html {
     border-radius: 10px;
 }
 
+.quote-section iframe {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.quote-section a {
+    margin: auto;
+}
+
 .quote-text {
     text-align: center;
     margin-bottom: 20px;
@@ -159,6 +184,7 @@ html {
     margin-top: 35px ;
     margin-bottom: 10px;
 }
+
 
 .quote span {
     color: #14e4eb;
@@ -183,7 +209,7 @@ html {
 }
 
 .description {
-    margin-top: 10vh;
+    margin-top: 5vh;
     text-align: center;
     font-size: 1.2em;
 }
@@ -194,24 +220,6 @@ html {
     border-radius: 5px;
 }
 
-@media (min-width: 768px) {
-    .quote-section {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-
-    .quote-text {
-        text-align: left;
-        margin-right: 20px;
-    }
-
-    .quote-image {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-    }
-}
 
 .quote-image img {
     height: auto;
@@ -230,6 +238,7 @@ html {
     transition: transform 0.3s ease-in-out;
 }
 
+
 @media (min-width: 768px) {
     .quote-section {
         flex-direction: row;
@@ -246,6 +255,14 @@ html {
         flex: 1;
         display: flex;
         justify-content: center;
+    }
+
+    
+}
+
+@media (max-width: 769px) {
+    .quote-text button {
+        margin:auto;
     }
 }
 
@@ -304,5 +321,32 @@ body.light-mode #menu-toggle {
 
     .overlay.active {
         display: block;
+    }
+}
+
+@media (max-width: 444px) {
+    .banner{
+        height: 16em;
+    }
+    .banner h1 {
+        font-weight: 600;
+        font-size: 2em;
+    }
+    .banner h2 {
+        font-size: 1em;
+    }
+
+    .quote {
+        font-size: 1em;
+        padding: 20px;
+    }
+
+    .description {
+        margin-top: 10vh;
+        text-align: center;
+        font-size: 1em;
+    }
+    .quote-image {
+        display: none;
     }
 }

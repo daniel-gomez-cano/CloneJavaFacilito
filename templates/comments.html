@@ -1,0 +1,26 @@
+<section class="comment-section">
+            <div class="comment-section-body" style="padding: 1rem;">
+                <h3>¡Deja tu pregunta o responde la pregunta de los demás!</h3>
+                <form id="comment-form" method="POST">
+                <textarea name="content" id="comment-area" rows="4" placeholder="Escribe aquí..." required></textarea>
+                <button class="publish-btn" type="submit">Enviar</button>
+                </form>
+                <hr class="comment-separator">
+                
+                {% for comment in comments %}
+                <div id="comment-list">
+                <article class="comment-input">
+                    <div class="profile-side">
+                    <img src="{{ url_for('static', filename='profile_pics/' + (comment.profile_image or 'default.jpg')) }}" alt="Perfil" width="70" height="70">
+                    <span class="username">{{ comment.username }} <em>{{ comment.created_at.strftime('%Y-%m-%d') }}</em></span>
+                    </div>
+                    <div class="comment-bubble">
+                    <p>
+                        {{ comment.content }}
+                    </p>
+                    </div>
+                </article>
+                </div>
+                {% endfor %}
+            </div>
+        </section>

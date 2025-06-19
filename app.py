@@ -35,25 +35,188 @@ conn = psycopg2.connect(dbname=DB_NAME, user=DB_USER, password=DB_PASS, host=DB_
 def home():
     return render_template('home.html')
 
-@app.route('/data')
+@app.route('/comments', methods=['GET', 'POST'])
+def comments():
+    cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
+
+    if 'loggedin' not in session:
+        return redirect(url_for('login'))
+
+    if request.method == 'POST':
+        content = request.form['content']
+        if content.strip():  # Validación simple
+            cursor.execute(
+                "INSERT INTO comments (user_id, content) VALUES (%s, %s)",
+                (session['id'], content)
+            )
+            conn.commit()
+            flash('Comentario enviado!')
+
+    # Cargar todos los comentarios
+    cursor.execute('''
+        SELECT c.content, c.created_at, u.username, u.profile_image
+        FROM comments c
+        JOIN users u ON c.user_id = u.id
+        ORDER BY c.created_at DESC
+    ''')
+    comments = cursor.fetchall()
+
+    return render_template('comments.html', comments=comments)
+
+@app.route('/data', methods=['GET', 'POST'])
 def data():
-    return render_template('data.html')
+    cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
 
-@app.route('/conditionals')
+    if 'loggedin' not in session:
+        return redirect(url_for('login'))
+
+    module_name = 'data'  # << este es el nombre que se guarda en el campo 'module'
+
+    if request.method == 'POST':
+        content = request.form['content']
+        if content.strip():
+            cursor.execute(
+                "INSERT INTO comments (user_id, content, module) VALUES (%s, %s, %s)",
+                (session['id'], content, module_name)
+            )
+            conn.commit()
+            flash('Comentario enviado!')
+
+    # Cargar comentarios SOLO para este módulo
+    cursor.execute('''
+        SELECT c.content, c.created_at, u.username, u.profile_image
+        FROM comments c
+        JOIN users u ON c.user_id = u.id
+        WHERE c.module = %s
+        ORDER BY c.created_at DESC
+    ''', (module_name,))
+    comments = cursor.fetchall()
+
+    return render_template('data.html', comments=comments)
+
+# Conditionals
+@app.route('/conditionals', methods=['GET', 'POST'])
 def conditionals():
-    return render_template('conditionals.html')
+    cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
 
-@app.route('/cicles')
+    if 'loggedin' not in session:
+        return redirect(url_for('login'))
+
+    module_name = 'conditionals'
+
+    if request.method == 'POST':
+        content = request.form['content']
+        if content.strip():
+            cursor.execute(
+                "INSERT INTO comments (user_id, content, module) VALUES (%s, %s, %s)",
+                (session['id'], content, module_name)
+            )
+            conn.commit()
+            flash('Comentario enviado!')
+
+    cursor.execute('''
+        SELECT c.content, c.created_at, u.username, u.profile_image
+        FROM comments c
+        JOIN users u ON c.user_id = u.id
+        WHERE c.module = %s
+        ORDER BY c.created_at DESC
+    ''', (module_name,))
+    comments = cursor.fetchall()
+
+    return render_template('conditionals.html', comments=comments)
+
+# Cicles
+@app.route('/cicles', methods=['GET', 'POST'])
 def cicles():
-    return render_template('cicles.html')
+    cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
 
-@app.route('/arrays')
+    if 'loggedin' not in session:
+        return redirect(url_for('login'))
+
+    module_name = 'cicles'
+
+    if request.method == 'POST':
+        content = request.form['content']
+        if content.strip():
+            cursor.execute(
+                "INSERT INTO comments (user_id, content, module) VALUES (%s, %s, %s)",
+                (session['id'], content, module_name)
+            )
+            conn.commit()
+            flash('Comentario enviado!')
+
+    cursor.execute('''
+        SELECT c.content, c.created_at, u.username, u.profile_image
+        FROM comments c
+        JOIN users u ON c.user_id = u.id
+        WHERE c.module = %s
+        ORDER BY c.created_at DESC
+    ''', (module_name,))
+    comments = cursor.fetchall()
+
+    return render_template('cicles.html', comments=comments)
+
+# Arrays
+@app.route('/arrays', methods=['GET', 'POST'])
 def arrays():
-    return render_template('arrays.html')
+    cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
 
-@app.route('/functions')
+    if 'loggedin' not in session:
+        return redirect(url_for('login'))
+
+    module_name = 'arrays'
+
+    if request.method == 'POST':
+        content = request.form['content']
+        if content.strip():
+            cursor.execute(
+                "INSERT INTO comments (user_id, content, module) VALUES (%s, %s, %s)",
+                (session['id'], content, module_name)
+            )
+            conn.commit()
+            flash('Comentario enviado!')
+
+    cursor.execute('''
+        SELECT c.content, c.created_at, u.username, u.profile_image
+        FROM comments c
+        JOIN users u ON c.user_id = u.id
+        WHERE c.module = %s
+        ORDER BY c.created_at DESC
+    ''', (module_name,))
+    comments = cursor.fetchall()
+
+    return render_template('arrays.html', comments=comments)
+
+# Functions
+@app.route('/functions', methods=['GET', 'POST'])
 def functions():
-    return render_template('functions.html')
+    cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
+
+    if 'loggedin' not in session:
+        return redirect(url_for('login'))
+
+    module_name = 'functions'
+
+    if request.method == 'POST':
+        content = request.form['content']
+        if content.strip():
+            cursor.execute(
+                "INSERT INTO comments (user_id, content, module) VALUES (%s, %s, %s)",
+                (session['id'], content, module_name)
+            )
+            conn.commit()
+            flash('Comentario enviado!')
+
+    cursor.execute('''
+        SELECT c.content, c.created_at, u.username, u.profile_image
+        FROM comments c
+        JOIN users u ON c.user_id = u.id
+        WHERE c.module = %s
+        ORDER BY c.created_at DESC
+    ''', (module_name,))
+    comments = cursor.fetchall()
+
+    return render_template('functions.html', comments=comments)
 
 @app.route('/roadmap')
 def roadmap():
@@ -198,6 +361,8 @@ def profile():
         flash("Error: " + str(e))  # Muestra el error real en pantalla (para desarrollo)
         print(f"[Profile error]: {e}")  # También lo imprime en consola
         return redirect(url_for('login'))  # Mejor redirigir a profile para debug
- 
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)
